@@ -1,0 +1,7 @@
+{
+  "name": "permissions",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
