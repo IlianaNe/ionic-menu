@@ -1,17 +1,20 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title class="text-light text-center">
+            Geolocalización
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <div class="container" style="color: #00BFB2;">
+        <div class="mt-5 text-center">
+            <p><strong>Latitud: </strong>{{latitude}}</p>
+            <p><strong>Longitud: </strong>{{longitude}}</p>
+        </div>
+
+        <ion-button class="mt-4 mb-5" expand="block" (click)="getLocation()">Obtener Localización</ion-button>
+    </div>
+
 </ion-content>
