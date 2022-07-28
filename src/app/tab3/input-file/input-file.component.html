@@ -1,0 +1,7 @@
+<input #oneFileInput type="file" accept=".jpg, .jpeg, .pdf" (change)="onFileInputChange($event, 'domicilio')"
+  style="display: none;" />
+
+<ion-button style="background-color: #6a64ff; text-align: center;"  (click)="oneFileInput.click()"  expand="block" fill="clear" shape="round">
+  <ion-icon name="{{icon}}"></ion-icon>
+  {{text}}
+</ion-button>

@@ -1,30 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
-import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
-  providers: [Camera, AndroidPermissions]
+  providers: [Camera]
 })
 export class Tab1Page implements OnInit {
   image: string;
+  complementary = false;
+  nameFile: string;
+  buttonVideo:boolean = false
 
-  constructor(private camera: Camera, private androidPermissions: AndroidPermissions) {
+  constructor(private camera: Camera) {
   }
 
   ngOnInit() {
   }
 
-  initializePermissions() {
-    this.androidPermissions.checkPermission(this.androidPermissions.PERMISSION.CAMERA).then(
-      result => console.log('Has permission?', result.hasPermission),
-      err => this.androidPermissions.requestPermission(this.androidPermissions.PERMISSION.CAMERA)
-    );
 
-    this.androidPermissions.requestPermissions([this.androidPermissions.PERMISSION.CAMERA, this.androidPermissions.PERMISSION.GET_ACCOUNTS]);
-  }
 
   openCamera() {
 
@@ -90,5 +85,11 @@ export class Tab1Page implements OnInit {
           reader.readAsDataURL(file);
       });
   }
+
+  onDataResponse(e){
+    console.log(e);
+    this.buttonVideo = e
+  }
+    
 
 }

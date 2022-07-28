@@ -24,13 +24,26 @@ export class Tab3Page {
   fileUri: string = '';
   openerBtn: boolean = false;
   url: string = '';
+  mimeTypeFile:string= '';
+  fileUpload: boolean = false;
+  file: any;
+  nameFile: string;
   /*downloadUrl = '';
   myFiles = [];
   downloadProgress = 0;
 
   pdfUrl = 'https://www.redalyc.org/pdf/1794/179421475003.pdf';*/
 
-  constructor(private http: HttpClient, private fileOpener: FileOpener, private loader: LoadingController, private toast: ToastController) {
+  formDesignInput = {
+    icon: "document-attach",
+    text: "Cargar Comprobante domicilio tecreho",
+  };
+
+  constructor(
+    private http: HttpClient, 
+    private fileOpener: FileOpener, 
+    private loader: LoadingController, 
+    private toast: ToastController) {
   }
 
   downloadFile() {
@@ -90,5 +103,26 @@ export class Tab3Page {
     const pdfUrl = './assets/create.pdf';
     const pdfName = 'violencia-intrafamiliar-y-de-genero';
     FileSaver.saveAs(pdfUrl, pdfName);
+  }
+
+  onUploadFile(file) {
+    if (file.data.fileType == 'image/jpeg') {
+      this.mimeTypeFile = file.data.fileType.slice(6)
+    }else{
+      this.mimeTypeFile = file.data.fileType.slice(12)
+    }
+    this.fileUpload = false;
+    const fileD = file.data.filesSelected.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(fileD);
+    reader.onload = () => {
+      this.file = reader.result;
+      const extensionArchivo = fileD.name.split(".");
+      const extension = extensionArchivo.pop();
+      this.nameFile = "comprobante." + extension;
+      console.log(this.nameFile);
+      
+      this.fileUpload = true;
+    };
   }
 }
