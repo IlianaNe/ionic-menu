@@ -7,20 +7,29 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <div class="m-5">
+    <div class="m-4">
         <ion-tab-button (click)="openCamera()">
             <ion-img class="icon mb-3" src="/assets/como-icono-captura.png"></ion-img>
             <ion-label style="color: #00BFB2;">
                 <h1>Tomar Foto</h1>
             </ion-label>
         </ion-tab-button>
-        <div class="mt-5 p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
+        <div class="text-center">
+            <div>
+                <input id="image-file-input" class="absolute h-0 w-0 opacity-0 invisible pointer-events-none" type="file" [multiple]="false" [accept]="'image/jpeg, image/png'" (change)="uploadImage(imageFileInput.files)" #imageFileInput>
+                <label type="button" class="btn btn-info" for="image-file-input" matRipple>
+                    <ion-icon name="images" class="mr-2 text-light"></ion-icon>
+                <span class="m-3 text-light">Subir Imagen</span>
+                </label>
+            </div>
+        </div>
+        <div class="mt-4 p-3 bg-info bg-opacity-10 border border-info border-start-0 rounded-end">
             <img *ngIf="image;else other_img" [src]="image" onerror="this.src='assets/no-image-available.png'" />
             <ng-template #other_img>
-                <h1 class="text-center text-secondary">-Aquí aparecerá
+                <h1 class="text-center text-primary">-Aquí aparecerá
                     <br> tu foto-</h1>
             </ng-template>
         </div>
-        <ion-button class="mb-4" color="tertiary" expand="block" (click)="initializePermissions()">Ver Permisos</ion-button>
+        <ion-button class="mt-4" size="small" color="tertiary" expand="block" (click)="initializePermissions()">Ver Permisos</ion-button>
     </div>
 </ion-content>

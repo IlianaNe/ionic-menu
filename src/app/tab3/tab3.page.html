@@ -7,31 +7,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+    <div class="m-4 text-center">
 
-    <!-- <ion-item>
-        <ion-input [(ngModel)]="downloadUrl"></ion-input>
-    </ion-item>-->
+        <iframe class="pdf mt-2" src='https://data.miraquetemiro.org/sites/default/files/documentos/31%20Manual%20Atencion%20Violencia%20Intrafamiliar%20y%20de%20Genero.pdf'></iframe>
+        <ion-button *ngIf="openerBtn == false" class="mb-4 mt-3" color="tertiary" expand="block" (click)="downloadPdf()">Descargar Archivo PDF</ion-button>
 
-    <ion-textarea *ngIf="openerBtn == false" [(ngModel)]="url" placeholder="Enter download URL"></ion-textarea>
-
-
-    <div class="container mt-5">
-        <ion-button *ngIf="openerBtn == false" class="mb-4" color="tertiary" expand="block" (click)="downloadFile()" [disabled]="url ==''">Descargar por URL</ion-button>
-
-        <ion-button *ngIf="openerBtn == true" class="mb-4" color="tertiary" expand="block" (click)="openFile()">Abrir Documento</ion-button>
-
-        <!-- <ion-button class="mb-4" color="tertiary" expand="block" (click)="downloadFile()" [disabled]="downloadUrl ==''">Descargar por URL</ion-button>
-        <ion-button class="mb-4" color="tertiary" expand="block" (click)="downloadFile(pdfUrl)">Descargar PDF</ion-button>-->
+        <div class="container mt-5">
+            <ion-textarea *ngIf="openerBtn == false" [(ngModel)]="url" placeholder="URL para descargar"></ion-textarea>
+            <ion-button *ngIf="openerBtn == false" class="mb-4" color="tertiary" expand="block" (click)="downloadFile()" [disabled]="url ==''">Descargar por URL</ion-button>
+            <ion-button *ngIf="openerBtn == true" class="mb-4" color="tertiary" expand="block" (click)="openFile()">Abrir Documento</ion-button>
+        </div>
     </div>
-
-    <!-- <ion-list>
-        <ion-item-sliding *ngFor="let f of myFiles">
-            <ion-item (click)="openFile(f)" tappable>
-                <ion-label class="ion-text-wrap">
-                    {{f}}
-                </ion-label>
-            </ion-item>
-        </ion-item-sliding>
-    </ion-list>>-->
-
 </ion-content>
