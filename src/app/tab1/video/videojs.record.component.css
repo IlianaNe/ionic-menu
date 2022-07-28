@@ -1,0 +1,32 @@
+/* change player background color */
+.video-js video {
+    background-color: #000000;
+  }
+
+ .buttonIngresar{
+  color:#472b74;
+
+ }
+ .user_Name {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  
+}
+.label{
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  color: #383a3e;
+}
+
+.User_Label_Section {
+  justify-content: center;
+}
+
+.ion-color-dark {
+  --ion-color-base: #43cc64 !important;
+}
+.label[_ngcontent-hiy-c144] {
+  color: #52d071;
+}

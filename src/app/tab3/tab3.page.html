@@ -9,13 +9,17 @@
 <ion-content [fullscreen]="true">
     <div class="m-4 text-center">
 
-        <iframe class="pdf mt-2" src='https://data.miraquetemiro.org/sites/default/files/documentos/31%20Manual%20Atencion%20Violencia%20Intrafamiliar%20y%20de%20Genero.pdf'></iframe>
+        <iframe class="pdf " src='https://data.miraquetemiro.org/sites/default/files/documentos/31%20Manual%20Atencion%20Violencia%20Intrafamiliar%20y%20de%20Genero.pdf'></iframe>
         <ion-button *ngIf="openerBtn == false" class="mb-4 mt-3" color="tertiary" expand="block" (click)="downloadPdf()">Descargar Archivo PDF</ion-button>
 
         <div class="container mt-5">
-            <ion-textarea *ngIf="openerBtn == false" [(ngModel)]="url" placeholder="URL para descargar"></ion-textarea>
+            <ion-textarea 
+                *ngIf="openerBtn == false" [(ngModel)]="url" placeholder="URL para descargar"></ion-textarea>
+            <app-input-file style="display: flex;" [inputDesign]="formDesignInput" (uploadFile)="onUploadFile($event)"></app-input-file><br>
+            <p *ngIf="fileUpload" >Se cargo corectamente el archivo: {{nameFile}}</p>
             <ion-button *ngIf="openerBtn == false" class="mb-4" color="tertiary" expand="block" (click)="downloadFile()" [disabled]="url ==''">Descargar por URL</ion-button>
             <ion-button *ngIf="openerBtn == true" class="mb-4" color="tertiary" expand="block" (click)="openFile()">Abrir Documento</ion-button>
         </div>
     </div>
+
 </ion-content>

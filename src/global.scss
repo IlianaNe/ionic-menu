@@ -24,3 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+  @import '~video.js/dist/video-js.css';
+  /*
+  videojs.wavesurfer.css is only required when recording audio-only:
+  @import '~videojs-wavesurfer/dist/css/videojs.wavesurfer.css';
+  */
+  @import '~videojs-record/dist/css/videojs.record.css';
+  
