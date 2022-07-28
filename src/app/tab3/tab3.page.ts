@@ -36,7 +36,7 @@ export class Tab3Page {
 
   formDesignInput = {
     icon: "document-attach",
-    text: "Cargar Comprobante domicilio tecreho",
+    text: "Cargar Comprobante Dom.",
   };
 
   constructor(

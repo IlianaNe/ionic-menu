@@ -13,10 +13,9 @@
         <ion-button *ngIf="openerBtn == false" class="mb-4 mt-3" color="tertiary" expand="block" (click)="downloadPdf()">Descargar Archivo PDF</ion-button>
 
         <div class="container mt-5">
-            <ion-textarea 
-                *ngIf="openerBtn == false" [(ngModel)]="url" placeholder="URL para descargar"></ion-textarea>
-            <app-input-file style="display: flex;" [inputDesign]="formDesignInput" (uploadFile)="onUploadFile($event)"></app-input-file><br>
-            <p *ngIf="fileUpload" >Se cargo corectamente el archivo: {{nameFile}}</p>
+            <app-input-file style="display: flex;" [inputDesign]="formDesignInput" (uploadFile)="onUploadFile($event)"></app-input-file>
+            <p *ngIf="fileUpload">Se cargo corectamente el archivo: {{nameFile}}</p><br>
+            <ion-textarea style="background: #472B74;" *ngIf="openerBtn == false" [(ngModel)]="url" class="text-white pt-3 mt-2" placeholder="URL para descargar"></ion-textarea>
             <ion-button *ngIf="openerBtn == false" class="mb-4" color="tertiary" expand="block" (click)="downloadFile()" [disabled]="url ==''">Descargar por URL</ion-button>
             <ion-button *ngIf="openerBtn == true" class="mb-4" color="tertiary" expand="block" (click)="openFile()">Abrir Documento</ion-button>
         </div>
