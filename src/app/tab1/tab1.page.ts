@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -14,11 +15,16 @@ export class Tab1Page implements OnInit {
   complementary = false;
   nameFile: string;
   buttonVideo:boolean = false
+  urlPath:string ='' 
 
 
 
-  constructor(private camera: Camera,route: ActivatedRoute) {
+  constructor(
+    private camera: Camera,
+    private router: Router,
+    route: ActivatedRoute) {
     const id: Observable<string> = route.params.pipe(map(p => p.id));
+    this.urlPath = this.router.url
     const url: Observable<string> = route.url.pipe(map(segments => segments.join('asdsad')));
     // route.data includes both `data` and `resolve`
     const user = route.data.pipe(map(d => d.user));
@@ -26,6 +32,10 @@ export class Tab1Page implements OnInit {
   
 
   ngOnInit() {
+  }
+
+  onClick(){
+    this.router.navigate(['appHome']);
   }
 
 

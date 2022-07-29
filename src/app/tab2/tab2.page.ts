@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { LoadingController } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -12,13 +13,20 @@ export class Tab2Page implements OnInit{
   latitude: number;
   longitude: number;
   loading: HTMLIonLoadingElement;
+  urlPath:string = '';
   
   constructor(
       private geolocation: Geolocation,
+      private router: Router,
       private androidPermissions: AndroidPermissions,
-      public loadingController: LoadingController,) {}
+      public loadingController: LoadingController,) {
+        this.urlPath = this.router.url
+      }
 
   ngOnInit(): void {
+  }
+  onClick(){
+    this.router.navigate(['appHome']);
   }
 
   async getLocation(){

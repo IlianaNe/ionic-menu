@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+    <ion-button (click)="onClick()" expand="block"  shape="round">
+        Navegar Url appHome
+    </ion-button>
+    <br>
 
     <div class="container" style="color: #00BFB2;">
         <div class="mt-5 text-center">
@@ -16,5 +20,7 @@
 
         <ion-button color="success" class="mt-4 mb-5" expand="block" (click)="getLocation()">Obtener Localización</ion-button>
     </div>
+
+    <p class="m-3 text-secondary mt-4">Url = {{urlPath}}.</p>
 
 </ion-content>

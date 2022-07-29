@@ -8,6 +8,7 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Plugins } from '@capacitor/core';
 import { Directory, Encoding } from '@capacitor/filesystem';
 import { LoadingController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 const { Filesystem, Storage } = Plugins;
 declare var require: any
 const FileSaver = require('file-saver');
@@ -38,12 +39,15 @@ export class Tab3Page {
     icon: "document-attach",
     text: "Cargar Comprobante Dom.",
   };
+  urlPath:string = '';
 
   constructor(
     private http: HttpClient, 
     private fileOpener: FileOpener, 
+    private router: Router,
     private loader: LoadingController, 
     private toast: ToastController) {
+      this.urlPath = this.router.url
   }
 
   downloadFile() {
@@ -59,6 +63,11 @@ export class Tab3Page {
         this.convertBlobToBase64(data, filename, ele);
       })
     });
+  }
+
+  
+  onClick(){
+    this.router.navigate(['appHome']);
   }
 
   convertBlobToBase64(blob, filename, ele) {
