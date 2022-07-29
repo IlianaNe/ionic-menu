@@ -10,10 +10,15 @@ const routes: Routes = [
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
   },
+  {
+    path: 'appHome',
+    loadChildren: () => import('./app-home/app-home.module').then( m => m.AppHomePageModule)
+  },
+
 ];
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { useHash: true }),  
   ],
   exports: [RouterModule]
 })

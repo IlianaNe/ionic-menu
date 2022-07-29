@@ -7,7 +7,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
     <div class="m-4 text-center">
+        <ion-button (click)="onClick()" expand="block"  shape="round">
+            Navegar Url appHome
+        </ion-button>
+        <br>
 
         <iframe class="pdf " src='https://data.miraquetemiro.org/sites/default/files/documentos/31%20Manual%20Atencion%20Violencia%20Intrafamiliar%20y%20de%20Genero.pdf'></iframe>
         <ion-button *ngIf="openerBtn == false" class="mb-4 mt-3" color="tertiary" expand="block" (click)="downloadPdf()">Descargar Archivo PDF</ion-button>
@@ -20,5 +25,7 @@
             <ion-button *ngIf="openerBtn == true" class="mb-4" color="tertiary" expand="block" (click)="openFile()">Abrir Documento</ion-button>
         </div>
     </div>
+    <br><br>
+    <p class="m-3 text-secondary mt-4">Url = {{urlPath}}.</p>
 
 </ion-content>

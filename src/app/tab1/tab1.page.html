@@ -7,6 +7,10 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+    <ion-button (click)="onClick()" expand="block"  shape="round">
+        Navegar Url appHome
+    </ion-button>
+    <br>
     <p class="m-3 text-secondary mt-4">Opciones para tomar foto, vídeo o subir tu imagen.</p>
     <div class="w-50 pb-1 pt-1 mt-4 m-3 rounded-top" style="background: #00BFB2;">
         <p class="m-2 text-light text-center">Sube tu imagen</p>
@@ -59,4 +63,5 @@
         </ion-row>
     </div>
     <br><br>
+    <p class="m-3 text-secondary mt-4">Url = {{urlPath}}.</p>
 </ion-content>
