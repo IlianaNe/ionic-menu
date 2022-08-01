@@ -14,6 +14,11 @@ const routes: Routes = [
     path: 'appHome',
     loadChildren: () => import('./app-home/app-home.module').then( m => m.AppHomePageModule)
   },
+  {
+    path: 'video/:id',
+    loadChildren: () => import('./video/video.module').then( m => m.VideoPageModule)
+  },
+
 
 ];
 @NgModule({
