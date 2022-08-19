@@ -18,12 +18,12 @@
   <ion-button shape="round" color="tertiary" className="metaMapButtonCss" (click)="verificationStatus()">Subir documento
   </ion-button>
   
-  <ion-item-sliding id="item100">
+  <ion-item-sliding id="item100" class="mt-3" >
     <ion-item >
       <ion-label>
         <h2 class="text-info">MetaMap API</h2>
-        <p class="text-white">Realiza una por una las opciones del API.</p>
-        <p class="text-white">Primero, adquiere tu Token de Acceso</p>
+        <p class="text-muted">Realiza una por una las opciones del API.</p>
+        <p class="text-muted">Primero, adquiere tu Token de Acceso</p>
       </ion-label>
     </ion-item>
 
@@ -37,24 +37,24 @@
   
 <br>
   <form (ngSubmit)="logForm()">
-    <ion-item style="background: #00BFB2;">
-      <ion-label position="floating">Nombre Usuario</ion-label>
+    <ion-item>
+      <ion-label position="floating" class="text-dark">Nombre Usuario</ion-label>
       <ion-input></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Geolocalización</ion-label>
+      <ion-label position="floating" class="text-dark">Geolocalización</ion-label>
       <ion-input></ion-input>
     </ion-item>
     <ion-button type="submit" shape="round" color="secondary">Crear nuevo usuario</ion-button>
   </form>
 <br>
 
-  <ion-item-sliding id="item102">
+  <ion-item-sliding id="item102"  class="border">
     <ion-item>
       <ion-label>
         <h2 class="text-info">Usuario</h2>
-        <p class="text-white">Visualiza la información</p>
-        <p class="text-white">del usuario.</p>
+        <p class="text-muted">Visualiza la información</p>
+        <p class="text-muted">del usuario.</p>
       </ion-label>
     </ion-item>
 
@@ -65,13 +65,13 @@
       </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
-
-  <ion-item-sliding id="item103">
+<br>
+  <ion-item-sliding id="item103" >
     <ion-item>
       <ion-label>
         <h2 class="text-info">Estatus del Usuario</h2>
-        <p class="text-white">Cambia el estatus</p>
-        <p class="text-white">del usuario.</p>
+        <p class="text-muted">Cambia el estatus</p>
+        <p class="text-muted">del usuario.</p>
       </ion-label>
     </ion-item>
 
