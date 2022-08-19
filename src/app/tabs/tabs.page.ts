@@ -21,4 +21,7 @@ export class TabsPage {
   openTab3(){
     this.router.navigate(['tabs/tab3/productId='+ this.productId]);
   }
+  openTab5(){
+    this.router.navigate(['tabs/tab5']);
+  }
 }
