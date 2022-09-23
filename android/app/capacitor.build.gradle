@@ -9,15 +9,18 @@ android {
 
 apply from: "../capacitor-cordova-android-plugins/cordova.variables.gradle"
 dependencies {
+    implementation project(':avo121-mati-capacitor-plugin')
     implementation project(':capacitor-app')
+    implementation project(':capacitor-filesystem')
     implementation project(':capacitor-haptics')
     implementation project(':capacitor-keyboard')
     implementation project(':capacitor-status-bar')
+    implementation project(':metamap-capacitor-plugin')
     implementation "androidx.core:core:1.6.+"
     implementation "androidx.appcompat:appcompat:1.0.0"
     implementation "com.android.support:support-v4:27.+"
 }
-
+apply from: "../../node_modules/metamap-cordova-plugin/src/android/build.gradle"
 
 if (hasProperty('postBuildExtras')) {
   postBuildExtras()

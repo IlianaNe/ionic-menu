@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "@avo121/mati-capacitor-plugin": "^3.1.9",
     "@awesome-cordova-plugins/android-permissions": "^5.44.0",
     "@awesome-cordova-plugins/camera": "^5.44.0",
     "@awesome-cordova-plugins/core": "^5.44.0",
@@ -27,6 +28,7 @@
     "@awesome-cordova-plugins/file-opener": "^5.44.0",
     "@awesome-cordova-plugins/file-transfer": "^5.44.0",
     "@awesome-cordova-plugins/geolocation": "^5.44.0",
+    "@awesome-cordova-plugins/network-interface": "^5.44.0",
     "@capacitor/android": "3.6.0",
     "@capacitor/app": "1.1.1",
     "@capacitor/core": "3.6.0",
@@ -43,9 +45,11 @@
     "cordova-plugin-file-opener2": "^3.0.5",
     "cordova-plugin-file-transfer": "^1.7.1",
     "cordova-plugin-geolocation": "^4.1.0",
+    "cordova-plugin-networkinterface": "^2.2.0",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
     "jspdf": "^1.5.3",
+    "metamap-capacitor-plugin": "^3.2.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
     "video.js": "^7.18.1",
@@ -84,9 +88,15 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "metamap-cordova-plugin": "^1.0.85",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "typescript": "~4.7.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "metamap-cordova-plugin": {}
+    }
+  }
 }

@@ -1,7 +1,15 @@
 [
 	{
+		"pkg": "@avo121/mati-capacitor-plugin",
+		"classpath": "com.getmati.plugins.capacitor.MetaMapCapacitorPlugin"
+	},
+	{
 		"pkg": "@capacitor/app",
 		"classpath": "com.capacitorjs.plugins.app.AppPlugin"
+	},
+	{
+		"pkg": "@capacitor/filesystem",
+		"classpath": "com.capacitorjs.plugins.filesystem.FilesystemPlugin"
 	},
 	{
 		"pkg": "@capacitor/haptics",
@@ -14,5 +22,9 @@
 	{
 		"pkg": "@capacitor/status-bar",
 		"classpath": "com.capacitorjs.plugins.statusbar.StatusBarPlugin"
+	},
+	{
+		"pkg": "metamap-capacitor-plugin",
+		"classpath": "com.getmati.plugins.capacitor.MetaMapCapacitorPlugin"
 	}
 ]
