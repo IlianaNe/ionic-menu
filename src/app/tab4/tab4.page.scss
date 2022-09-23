@@ -2,3 +2,105 @@
     width: 70px;
     margin-right: 20px;
 }
+
+.grid-space {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: auto;
+    grid-template-rows: auto !important;
+  }
+  
+  .grid-element {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    padding: .5rem;
+    box-sizing: border-box;
+  }
+  
+  .card {
+    height: 100%;
+    margin: 0;
+    display: absolute;
+  }
+  
+  .grid-card {
+    height: 100%;
+    padding: 0;
+  
+    ion-row {
+      height: 100%;
+    }
+  
+    .text-card {
+      margin: 0%;
+    }
+  
+  }
+
+  
+  
+  .text-card {
+    color: #492E75;
+  }
+  
+
+// HORIZONTAL AND SMALL SCREENS
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  
+  .text-card {
+    font-size: 1rem;
+  }
+
+}
+
+// HORIZONTAL AND BIG SCREENS
+@media screen and (orientation: landscape) and (min-width: 801px) and (max-width: 999px) {
+
+  
+
+}
+
+// HORIZONTAL TABLETS
+@media screen and (orientation: landscape) and (min-width: 1000px) {
+
+  
+
+}
+
+// VERTICAL SCREENS
+@media screen and (orientation: portrait) {
+  
+  
+
+}
+
+// VERTICAL AND SMALL SCREENS
+@media screen and (orientation: portrait) and (max-height: 800px) {
+
+  .grid-card {
+    .row-card {
+      display: grid;
+      grid-auto-rows: 60% 40%;
+      padding-top: 5px;
+    }
+  }
+  
+  .image-card {
+    height: 100%;
+  }
+
+  .text-card {
+    font-size: .9rem;
+  }
+
+}
+
+// VERTICAL AND BIG SCREENS
+@media screen and (orientation: portrait) and (min-height: 801px) {
+
+  
+
+}
